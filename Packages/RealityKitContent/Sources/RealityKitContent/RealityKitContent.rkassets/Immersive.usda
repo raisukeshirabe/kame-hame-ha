@@ -1,0 +1,60 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def Xform "Aura"
+    {
+        def RealityKitComponent "VFXEmitter"
+        {
+            token info:id = "RealityKit.VFXEmitter"
+
+            def RealityKitStruct "currentState"
+            {
+                token birthDirection = "Normal"
+                token birthLocation = "Surface"
+                token emitterShape = "Sphere"
+                float particleSpeed = -0.8
+                float particleSpeedVariation = 0.2
+                float3 shapeSize = (0.1, 0.1, 0.1)
+
+                def RealityKitStruct "mainEmitter"
+                {
+                    float3 acceleration = (0, 0.5, 0)
+                    token animationRepeatMode = "PlayOnce"
+                    float birthRate = 5000
+                    token blendMode = "Additive"
+                    int64 columnCount = 4
+                    float4 endColorA = (0.84274817, 0.7477842, 0, 1)
+                    float4 endColorB = (1, 1, 1, 1)
+                    float frameRate = 0
+                    int64 initialFrame = 8
+                    int64 initialFrameVariation = 8
+                    bool isAnimated = 1
+                    float noiseAnimationSpeed = 100
+                    float noiseStrength = 0.1
+                    asset particleImage = @ParticleEmitterPresetTextures/dustsheet.exr@
+                    double particleLifeSpan = 0.2
+                    float particleMass = 1
+                    float particleSize = 0.04
+                    int64 rowCount = 4
+                    float sizeMultiplierAtEndOfLifespan = 0
+                    float sizeMultiplierAtEndOfLifespanPower = 5
+                    float4 startColorA = (1, 0.91478527, 0.37841025, 1)
+                    bool useEndColor = 1
+                    bool useEndColorRange = 0
+                    bool useStartColorRange = 0
+                }
+
+                def RealityKitStruct "spawnedEmitter"
+                {
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,130 @@
+#usda 1.0
+(
+    defaultPrim = "ChargeAura"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "ChargeAura"
+{
+    float2 ui:nodegraph:node:pos = (40, 40)
+    int ui:nodegraph:node:stackingOrder = 2
+    quatf xformOp:orient = (1, 0, 0, 0)
+    float3 xformOp:scale = (1, 1, 1)
+    float3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def RealityKitComponent "VFXEmitter"
+    {
+        token info:id = "RealityKit.VFXEmitter"
+
+        def RealityKitStruct "currentState"
+        {
+            token birthDirection = "Normal"
+            token birthLocation = "Surface"
+            int64 burstCount = 100
+            double emissionDuration = 1
+            token emitterShape = "Sphere"
+            float particleSpeed = -1
+            float particleSpeedVariation = 0.2
+            float3 shapeSize = (0.01, 0.01, 0.01)
+
+            def RealityKitStruct "mainEmitter"
+            {
+                float3 acceleration = (0, 0.5, 0)
+                token animationRepeatMode = "PlayOnce"
+                float birthRate = 5000
+                token blendMode = "Additive"
+                int64 columnCount = 4
+                float4 endColorA = (0.84051573, 0.75813127, 0, 1)
+                float4 endColorB = (1, 1, 1, 1)
+                float frameRate = 0
+                int64 initialFrame = 8
+                int64 initialFrameVariation = 8
+                bool isAnimated = 1
+                float noiseAnimationSpeed = 100
+                float noiseStrength = 0.1
+                asset particleImage = @ParticleEmitterPresetTextures/dustsheet.exr@
+                double particleLifeSpan = 0.2
+                double particleLifeSpanVariation = 0.2
+                float particleMass = 5
+                float particleSize = 0.1
+                float particleSizeVariation = 0
+                int64 rowCount = 4
+                float sizeMultiplierAtEndOfLifespan = 3
+                float sizeMultiplierAtEndOfLifespanPower = 5
+                float4 startColorA = (1, 0.9087533, 0.5500173, 1)
+                bool useEndColor = 1
+                bool useEndColorRange = 0
+                bool useStartColorRange = 0
+            }
+
+            def RealityKitStruct "spawnedEmitter"
+            {
+            }
+        }
+    }
+}
+
+def Xform "ShootAura"
+{
+    reorder nameChildren = ["VFXEmitter", "ChargeAura"]
+    float2 ui:nodegraph:node:pos = (20, 20)
+    int ui:nodegraph:node:stackingOrder = 1
+    quatf xformOp:orient = (1, 0, 0, 0)
+    float3 xformOp:scale = (1, 1, 1)
+    float3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def RealityKitComponent "VFXEmitter"
+    {
+        token info:id = "RealityKit.VFXEmitter"
+
+        def RealityKitStruct "currentState"
+        {
+            token birthDirection = "Normal"
+            token birthLocation = "Surface"
+            int64 burstCount = 100
+            double emissionDuration = 1
+            token emitterShape = "Sphere"
+            float particleSpeed = -0.4
+            float particleSpeedVariation = 0.2
+            float3 shapeSize = (0.01, 0.01, 0.01)
+
+            def RealityKitStruct "mainEmitter"
+            {
+                float3 acceleration = (0, 0.5, 0)
+                token animationRepeatMode = "PlayOnce"
+                float birthRate = 5000
+                token blendMode = "Additive"
+                int64 columnCount = 4
+                float4 endColorA = (0.84051573, 0.75813127, 0, 1)
+                float4 endColorB = (1, 1, 1, 1)
+                float frameRate = 0
+                int64 initialFrame = 8
+                int64 initialFrameVariation = 8
+                bool isAnimated = 1
+                float noiseAnimationSpeed = 100
+                float noiseStrength = 0.1
+                asset particleImage = @ParticleEmitterPresetTextures/dustsheet.exr@
+                double particleLifeSpan = 0.2
+                double particleLifeSpanVariation = 0.2
+                float particleMass = 1
+                float particleSize = 0.2
+                float particleSizeVariation = 0
+                int64 rowCount = 4
+                float sizeMultiplierAtEndOfLifespan = 0
+                float sizeMultiplierAtEndOfLifespanPower = 5
+                float4 startColorA = (1, 0.9087533, 0.5500173, 1)
+                bool useEndColor = 1
+                bool useEndColorRange = 0
+                bool useStartColorRange = 0
+            }
+
+            def RealityKitStruct "spawnedEmitter"
+            {
+            }
+        }
+    }
+}
+
