@@ -6,7 +6,8 @@
 
 ## Demo
 
-https://github.com/user-attachments/assets/c8124f54-778e-440a-b1b9-aa5f7b05c64c
+![demo](https://github.com/user-attachments/assets/5b653570-a877-43e8-8310-36077cfa9b02)
+
 
 ## Features
 
