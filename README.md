@@ -4,6 +4,11 @@
 
 **Kame-Hame-Ha** is an immersive AR app for visionOS that lets you experience firing the iconic "Kamehameha" energy blast. Inspired by the legendary move from anime, users can charge and unleash a powerful energy wave by performing the signature motion. With the advanced spatial capabilities of visionOS, you’ll feel like you're truly launching a massive energy blast into your real-world surroundings.
 
+## Demo
+
+https://github.com/user-attachments/assets/82a01cb5-9046-4f3b-a8f4-ed0296e79801
+
+
 ## Features
 
 - **Gesture-Based Controls**: Perform the signature "Kamehameha" charging motion with your hands to unleash the energy blast.
