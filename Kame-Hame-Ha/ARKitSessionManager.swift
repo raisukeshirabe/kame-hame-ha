@@ -9,12 +9,12 @@ class ARKitSessionManager {
     let sceneReconstruction = SceneReconstructionProvider()
     let handTracking = HandTrackingProvider()
 
-    // かめはめ波用の新しいプロパティ
+    // かめはめ波のEntity
     var kamehamehaEntity: ModelEntity?
-    let kamehamehaDistanceThreshold: Float = 0.1 // 手首の距離のしきい値を1cmに設定
-
     // かめはめ波のParticleEntity
     var auraEntity: Entity?
+    let kamehamehaDistanceThreshold: Float = 0.1 // 手首の距離を1cmに設定
+
 
     init() {
         Task {
@@ -36,9 +36,6 @@ class ARKitSessionManager {
     // 左右の手のEntity。衝突時にEntityを削除するため
     var leftHandEntity = Entity()
     var rightHandEntity = Entity()
-    // 左右の手に追従する霊弾のEntity。霊弾への参照を保持するため
-    var leftHandSoulBullet: ModelEntity?
-    var rightHandSoulBullet: ModelEntity?
 
     var errorState = false
 
@@ -268,6 +265,7 @@ class ARKitSessionManager {
         }
     }
 
+    // かめはめ波の生成
     @MainActor
     func generateKamehameha() -> ModelEntity {
         let radius: Float = 0.03
